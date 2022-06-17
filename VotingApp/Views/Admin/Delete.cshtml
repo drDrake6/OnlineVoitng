@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@using System.Collections.Generic;
+@using VotingApp.Models;
+@model List<Candidate>
+
+<form method="POST">
+    <div class="col-sm-3">
+        @if(Model.Count > 0 && Model[Model.Count - 1] == null)
+        {
+            Model.RemoveAt(Model.Count - 1);
+        <span>Этот кандидат участвует в голосовании</span>
+        }
+
+        <select class="selectpicker mb-2" data-live-search="true" name="id">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <option value="@Model[i].Id">@Model[i].Name</option>
+            }
+        </select>
+        <input type="submit" class="btn btn-primary" value="Удалить" />
+    </div>
+</form>

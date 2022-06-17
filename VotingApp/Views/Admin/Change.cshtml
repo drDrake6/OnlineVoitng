@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Change";
+}
+
+@using System.Collections.Generic;
+@using VotingApp.Models;
+@model List<Candidate>
+
+<form method="POST">
+    <div class="col-sm-3">
+        <select class="selectpicker mb-2" data-live-search="true" name="id" id="select_candidate">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <option value="@Model[i].Id">@Model[i].Name</option>
+            }
+        </select>
+
+        <input class="form-control mb-2" type="text" name="name" id="candidate_name" />
+        <input type="submit" class="btn btn-primary" value="Изменить" />
+    </div>
+</form>

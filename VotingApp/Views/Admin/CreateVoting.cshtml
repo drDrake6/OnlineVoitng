@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "CreateVoting";
+}
+
+<form method="POST">
+    <select class="selectpicker mb-2" data-live-search="true" multiple name="ids">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <option value="@Model[i].Id">@Model[i].Name</option>
+        }
+    </select>
+    <input type="text" class="form-control mb-2" name="name"/>
+    <input type="submit" class="btn btn-primary" value="Создать" /><br /><br />
+</form>
+

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Vote";
+}
+<div id="errors"></div>
+<select class="selectpicker" data-live-search="true" id="votings_view">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <option value="@Model[i].Id">@Model[i].Name</option>
+    }
+</select>
+
+<table class="table table-condensed table-striped  col-md-6">
+    <thead><tr><th>Кандидат</th><th>голосов</th><th></th></tr></thead>
+    <tbody>
+    </tbody>
+</table>
+<input type="button" id="make_vote_btn" value="отдать голос" />
+
